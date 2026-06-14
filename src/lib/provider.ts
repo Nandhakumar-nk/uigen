@@ -509,7 +509,7 @@ export default function App() {
 export function getLanguageModel() {
   const apiKey = process.env.ANTHROPIC_API_KEY?.trim();
 
-  if (!apiKey || apiKey === "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") {
+  if (!apiKey) {
     console.log(
       "ANTHROPIC_API_KEY is not set (or is still the placeholder). " +
         "Using the mock provider — responses will be canned. " +
