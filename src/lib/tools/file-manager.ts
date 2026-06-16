@@ -7,12 +7,8 @@ export function buildFileManagerTool(fileSystem: VirtualFileSystem) {
     description:
       'Rename or delete files or folders in the file system. Rename can be used to "move" a file. Rename will recursively create folders as required.',
     parameters: z.object({
-      command: z
-        .enum(["rename", "delete"])
-        .describe("The operation to perform"),
-      path: z
-        .string()
-        .describe("The path to the file or directory to rename or delete"),
+      command: z.enum(["rename", "delete"]).describe("The operation to perform"),
+      path: z.string().describe("The path to the file or directory to rename or delete"),
       new_path: z
         .string()
         .optional()

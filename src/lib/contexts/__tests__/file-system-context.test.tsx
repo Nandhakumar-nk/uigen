@@ -237,9 +237,7 @@ test("uses provided file system when passed", () => {
 
   const { result } = renderHook(() => useFileSystem(), {
     wrapper: ({ children }) => (
-      <FileSystemProvider fileSystem={customFileSystem as any}>
-        {children}
-      </FileSystemProvider>
+      <FileSystemProvider fileSystem={customFileSystem as any}>{children}</FileSystemProvider>
     ),
   });
 
@@ -272,10 +270,7 @@ test("handles str_replace_editor create command", () => {
     "/test.js",
     "console.log('test');"
   );
-  expect(mockFileSystem.createFile).toHaveBeenCalledWith(
-    "/test.js",
-    "console.log('test');"
-  );
+  expect(mockFileSystem.createFile).toHaveBeenCalledWith("/test.js", "console.log('test');");
   expect(result.current.refreshTrigger).toBe(initialTrigger + 1);
 });
 

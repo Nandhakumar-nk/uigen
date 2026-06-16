@@ -30,12 +30,7 @@ vi.mock("../MessageList", () => ({
 vi.mock("../MessageInput", () => ({
   MessageInput: ({ input, handleInputChange, handleSubmit, isLoading }: any) => (
     <div data-testid="message-input">
-      <input
-        value={input}
-        onChange={handleInputChange}
-        data-testid="input"
-        disabled={isLoading}
-      />
+      <input value={input} onChange={handleInputChange} data-testid="input" disabled={isLoading} />
       <button onClick={handleSubmit} disabled={isLoading} data-testid="submit">
         Submit
       </button>
@@ -72,7 +67,7 @@ test("passes correct props to MessageList", () => {
     { id: "1", role: "user", content: "Hello" },
     { id: "2", role: "assistant", content: "Hi there!" },
   ];
-  
+
   (useChat as any).mockReturnValue({
     ...mockUseChat,
     messages,
@@ -136,12 +131,13 @@ test("isLoading is false when status is idle", () => {
   expect(submitButton).toHaveProperty("disabled", false);
 });
 
-
 test("scrolls when messages change", () => {
   const { rerender } = render(<ChatInterface />);
 
   // Get initial scroll container
-  const scrollContainer = screen.getByTestId("message-list").closest("[data-radix-scroll-area-viewport]");
+  const scrollContainer = screen
+    .getByTestId("message-list")
+    .closest("[data-radix-scroll-area-viewport]");
   expect(scrollContainer).toBeDefined();
 
   // Update messages - this should trigger the useEffect

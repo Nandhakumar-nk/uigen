@@ -27,10 +27,7 @@ export const buildStrReplaceTool = (fileSystem: VirtualFileSystem) => {
     }: z.infer<typeof TextEditorParameters>) => {
       switch (command) {
         case "view":
-          return fileSystem.viewFile(
-            path,
-            view_range as [number, number] | undefined
-          );
+          return fileSystem.viewFile(path, view_range as [number, number] | undefined);
 
         case "create":
           return fileSystem.createFileWithParents(path, file_text || "");

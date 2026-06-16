@@ -108,9 +108,9 @@ describe("useAuth", () => {
       const { result } = renderHook(() => useAuth());
 
       await act(async () => {
-        await expect(
-          result.current.signIn("test@example.com", "password123")
-        ).rejects.toThrow("network error");
+        await expect(result.current.signIn("test@example.com", "password123")).rejects.toThrow(
+          "network error"
+        );
       });
 
       expect(result.current.isLoading).toBe(false);
@@ -148,10 +148,7 @@ describe("useAuth", () => {
           messages: [],
           fileSystemData: {},
         });
-        (getProjects as any).mockResolvedValue([
-          { id: "recent-project" },
-          { id: "older-project" },
-        ]);
+        (getProjects as any).mockResolvedValue([{ id: "recent-project" }, { id: "older-project" }]);
 
         const { result } = renderHook(() => useAuth());
 
@@ -274,9 +271,9 @@ describe("useAuth", () => {
       const { result } = renderHook(() => useAuth());
 
       await act(async () => {
-        await expect(
-          result.current.signUp("new@example.com", "password123")
-        ).rejects.toThrow("network error");
+        await expect(result.current.signUp("new@example.com", "password123")).rejects.toThrow(
+          "network error"
+        );
       });
 
       expect(result.current.isLoading).toBe(false);

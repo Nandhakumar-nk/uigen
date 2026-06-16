@@ -1,12 +1,6 @@
 "use client";
 
-import React, {
-  createContext,
-  useContext,
-  useState,
-  useCallback,
-  useEffect,
-} from "react";
+import React, { createContext, useContext, useState, useCallback, useEffect } from "react";
 import { VirtualFileSystem, FileNode } from "@/lib/file-system";
 
 interface ToolCall {
@@ -29,9 +23,7 @@ interface FileSystemContextType {
   reset: () => void;
 }
 
-const FileSystemContext = createContext<FileSystemContextType | undefined>(
-  undefined
-);
+const FileSystemContext = createContext<FileSystemContextType | undefined>(undefined);
 
 export function FileSystemProvider({
   children,

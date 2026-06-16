@@ -429,10 +429,7 @@ export default function App() {
 
     // Collect all stream parts
     const parts: LanguageModelV1StreamPart[] = [];
-    for await (const part of this.generateMockStream(
-      options.prompt,
-      userPrompt
-    )) {
+    for await (const part of this.generateMockStream(options.prompt, userPrompt)) {
       parts.push(part);
     }
 

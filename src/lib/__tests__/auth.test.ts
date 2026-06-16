@@ -112,4 +112,3 @@ describe("getSession", () => {
     expect(session).toBeNull();
   });
 });
-

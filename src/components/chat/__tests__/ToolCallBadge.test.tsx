@@ -10,31 +10,45 @@ afterEach(() => {
 // ── getToolCallLabel – str_replace_editor ────────────────────────────────────
 
 test("getToolCallLabel: str_replace_editor create returns Creating filename", () => {
-  expect(getToolCallLabel("str_replace_editor", { command: "create", path: "App.jsx" })).toBe("Creating App.jsx");
+  expect(getToolCallLabel("str_replace_editor", { command: "create", path: "App.jsx" })).toBe(
+    "Creating App.jsx"
+  );
 });
 
 test("getToolCallLabel: str_replace_editor str_replace returns Editing filename", () => {
-  expect(getToolCallLabel("str_replace_editor", { command: "str_replace", path: "Card.jsx" })).toBe("Editing Card.jsx");
+  expect(getToolCallLabel("str_replace_editor", { command: "str_replace", path: "Card.jsx" })).toBe(
+    "Editing Card.jsx"
+  );
 });
 
 test("getToolCallLabel: str_replace_editor insert returns Editing filename", () => {
-  expect(getToolCallLabel("str_replace_editor", { command: "insert", path: "Button.tsx" })).toBe("Editing Button.tsx");
+  expect(getToolCallLabel("str_replace_editor", { command: "insert", path: "Button.tsx" })).toBe(
+    "Editing Button.tsx"
+  );
 });
 
 test("getToolCallLabel: str_replace_editor view returns Viewing filename", () => {
-  expect(getToolCallLabel("str_replace_editor", { command: "view", path: "index.ts" })).toBe("Viewing index.ts");
+  expect(getToolCallLabel("str_replace_editor", { command: "view", path: "index.ts" })).toBe(
+    "Viewing index.ts"
+  );
 });
 
 test("getToolCallLabel: str_replace_editor undo_edit returns Undoing changes in filename", () => {
-  expect(getToolCallLabel("str_replace_editor", { command: "undo_edit", path: "App.jsx" })).toBe("Undoing changes in App.jsx");
+  expect(getToolCallLabel("str_replace_editor", { command: "undo_edit", path: "App.jsx" })).toBe(
+    "Undoing changes in App.jsx"
+  );
 });
 
 test("getToolCallLabel: str_replace_editor unknown command defaults to Editing", () => {
-  expect(getToolCallLabel("str_replace_editor", { command: "unknown_cmd", path: "App.jsx" })).toBe("Editing App.jsx");
+  expect(getToolCallLabel("str_replace_editor", { command: "unknown_cmd", path: "App.jsx" })).toBe(
+    "Editing App.jsx"
+  );
 });
 
 test("getToolCallLabel: str_replace_editor strips directory prefix from path", () => {
-  expect(getToolCallLabel("str_replace_editor", { command: "create", path: "src/components/App.jsx" })).toBe("Creating App.jsx");
+  expect(
+    getToolCallLabel("str_replace_editor", { command: "create", path: "src/components/App.jsx" })
+  ).toBe("Creating App.jsx");
 });
 
 test("getToolCallLabel: str_replace_editor missing path falls back to 'file'", () => {
@@ -44,7 +58,9 @@ test("getToolCallLabel: str_replace_editor missing path falls back to 'file'", (
 // ── getToolCallLabel – file_manager ─────────────────────────────────────────
 
 test("getToolCallLabel: file_manager rename returns Renaming old to new", () => {
-  expect(getToolCallLabel("file_manager", { command: "rename", path: "old.jsx", new_path: "new.jsx" })).toBe("Renaming old.jsx to new.jsx");
+  expect(
+    getToolCallLabel("file_manager", { command: "rename", path: "old.jsx", new_path: "new.jsx" })
+  ).toBe("Renaming old.jsx to new.jsx");
 });
 
 test("getToolCallLabel: file_manager rename strips directories from both paths", () => {
@@ -58,15 +74,21 @@ test("getToolCallLabel: file_manager rename strips directories from both paths",
 });
 
 test("getToolCallLabel: file_manager rename with missing new_path falls back to 'file'", () => {
-  expect(getToolCallLabel("file_manager", { command: "rename", path: "Card.jsx" })).toBe("Renaming Card.jsx to file");
+  expect(getToolCallLabel("file_manager", { command: "rename", path: "Card.jsx" })).toBe(
+    "Renaming Card.jsx to file"
+  );
 });
 
 test("getToolCallLabel: file_manager delete returns Deleting filename", () => {
-  expect(getToolCallLabel("file_manager", { command: "delete", path: "Card.jsx" })).toBe("Deleting Card.jsx");
+  expect(getToolCallLabel("file_manager", { command: "delete", path: "Card.jsx" })).toBe(
+    "Deleting Card.jsx"
+  );
 });
 
 test("getToolCallLabel: file_manager unknown command returns Processing filename", () => {
-  expect(getToolCallLabel("file_manager", { command: "unknown_cmd", path: "Card.jsx" })).toBe("Processing Card.jsx");
+  expect(getToolCallLabel("file_manager", { command: "unknown_cmd", path: "Card.jsx" })).toBe(
+    "Processing Card.jsx"
+  );
 });
 
 test("getToolCallLabel: file_manager missing path falls back to 'file'", () => {

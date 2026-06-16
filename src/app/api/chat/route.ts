@@ -13,8 +13,7 @@ export async function POST(req: Request) {
     messages,
     files,
     projectId,
-  }: { messages: any[]; files: Record<string, FileNode>; projectId?: string } =
-    await req.json();
+  }: { messages: any[]; files: Record<string, FileNode>; projectId?: string } = await req.json();
 
   messages.unshift({
     role: "system",

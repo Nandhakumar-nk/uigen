@@ -8,8 +8,7 @@ function getFileName(path: string): string {
 }
 
 export function getToolCallLabel(toolName: string, args: unknown): string {
-  const safeArgs =
-    args && typeof args === "object" ? (args as Record<string, unknown>) : {};
+  const safeArgs = args && typeof args === "object" ? (args as Record<string, unknown>) : {};
 
   if (toolName === "str_replace_editor") {
     const command = safeArgs.command as string | undefined;

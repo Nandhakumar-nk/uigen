@@ -1,0 +1,12 @@
+node_modules/
+.next/
+dist/
+generated/
+logs.txt
+*.log
+coverage/
+prisma/migrations/
+.env
+.env.local
+.vercel/
+public/

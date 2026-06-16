@@ -10,7 +10,7 @@ export default async function Home() {
   // If user is authenticated, redirect to their most recent project
   if (user) {
     const projects = await getProjects();
-    
+
     if (projects.length > 0) {
       redirect(`/${projects[0].id}`);
     }
