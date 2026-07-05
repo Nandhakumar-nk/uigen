@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm audit *)",
+      "Bash(npm test *)",
+      "Bash(npm ls *)",
+      "Bash(node -e \"console.log\\(Object.keys\\(require\\('./node_modules/ai/package.json'\\).dependencies || {}\\)\\)\")",
+      "Bash(npm view *)",
+      "Bash(npm install *)",
+      "Bash(grep -i \"^ai$\")",
+      "Bash(node -e \"console.log\\(require.resolve\\('ai'\\)\\)\")",
+      "Bash(node *)",
+      "Bash(npx vitest *)",
+      "Bash(git stash *)",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_navigate",
+      "Bash(curl *)",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_type",
+      "mcp__playwright__browser_wait_for",
+      "mcp__playwright__browser_click"
+    ]
+  }
+}
